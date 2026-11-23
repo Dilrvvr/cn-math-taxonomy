@@ -1,5 +1,29 @@
 # 变更日志
 
+## 2026-11-23（每周学习周报，Worker，尚未部署）
+
+- 新增 `api/digest.js`：每周一 00:00 UTC（北京 08:00）cron 触发 `sendWeeklyDigests`，给 `mail_consent = 1` 且未退订的用户发一封服务邮件。内容只来自用户自己同步的数据：第一个孩子的名字、本周新增错题（`ts` 在近 7 天）、待复测数（`api/lib.js` 的 `computeDue`，与前端 `isDue` 同规则，老条目按 `ts` + 1 天）、已毕业总数、本周诊断次数（诊断记录的 `savedAt`）、进行中的期末补漏计划（计划日期 7 天内）。四项全 0 且没有进行中的计划就不发。主题「知识图谱周报：{孩子名}有 N 道错题待复测」，N 为 0 时「知识图谱周报：本周学习小结」；正文 HTML + 纯文本，一个「去错题本复测」按钮，页脚是服务邮件说明和退订链接，不提付费产品。
+- 防重复：`digest_log(user_id, week_key)`，`week_key` 为按 Asia/Shanghai 算的 ISO 周（如 2026-W48），发送前查、发送成功后写；单个用户失败只记日志，不中断整批。`mail.js` 的 `sendMail` 多一个可选的第四参数 `{ html, headers }`，验证码邮件不受影响。
+- 退订：`users.digest_token`（32 位随机十六进制，首次发送时生成）、`users.digest_opt_out`；`GET /digest/unsub?t=…` 置退订并返回中文确认页，token 不能用于登录 / 同步。邮件带 `List-Unsubscribe` 头。
+- 管理端点：`POST /admin/digest/run`，请求头 `X-Admin-Key` 等于 `ADMIN_KEY`（未设置一律 404），`?dry=1` 强制只算不发，返回候选人数、将发送数、跳过原因、每封的打码邮箱与各项计数。
+- `wrangler.toml`：`[triggers] crons = ["0 0 * * 1"]`，`DIGEST_DRY_RUN = "1"`（只有恰好是 `"0"` 才真发，其余一律只算不发、不写发送日志）。`schema.sql` 新增 `digest_log` 与 `users` 两列；已上线的库要先跑一次 `api/migrations/0001_digest.sql`（见 `wrangler.toml` 顶部的上线步骤）。
+- 新增 `tests/test_digest.js`，加入 CI 与 `npm test`。
+
+## 2026-11-23（错题到期复测）
+
+- 错题条目新增可选字段 `stage`（0–3）、`dueAt`（下次到期，毫秒）、`done`（已毕业），缺省按 stage 0、`ts` + 1 天、未毕业处理，老数据无需迁移。复测间隔 `INTERVALS_DAYS = [1, 3, 7, 15]`（`assets/wrongbook.js`；周报用的 `api/lib.js` 将存一份同值）。又答错：回到 stage 0、明天到期、清掉毕业标记；复测通过：stage + 1、按间隔排下一次，stage 3 通过即毕业；未过：stage 不变，明天再测。
+- `assets/wrongbook.js` 新增 `dueList(childId, now)`、`review(childId, qid, passed, now)`，以及首页用的 `dueTotal(now)`。`assets/sync.js` 的 `mergeWrongbook` 对同一 qid 的两份条目，复测进度单独取更靠前的一份（done 优先，其次 stage 高者，其次 dueAt 晚者），ts / count 等沿用原规则，旧副本不再冲掉复测进度。
+- 错题本页顶部新增「今日待复测」区（有到期题才显示）：选择题点选项即判对错，无选项的题先「显示答案」再自评「会了 / 还没会」；每条题目行带复测状态小字，已毕业的留在列表里。
+- 首页：已登录且本机合计有到期题时，三步流程之前显示一条「今日待复测 N 题 → 去复测」；未登录或没有到期题不显示、不占位。
+- 修：诊断演示模式结果页（及开始页、答题页）顶部多出的一行「null」——`childBar()` 在演示模式返回 null，被直接 `append`。
+- Service Worker 缓存版本 v37 → v38（缓存清单里的被改文件本来就在）。新增 `tests/test_wrongbook_review.js`，加入 CI 与 `npm test`；`tests/test_home.js` 补首页卡片用例。
+
+## 2026-11-22（高中思想政治）
+
+- 新增第 11 个学科「思想政治」，仅高中。统编版必修 1《中国特色社会主义》、必修 2《经济与社会》、必修 3《政治与法治》、必修 4《哲学与文化》，选择性必修 1《当代国际政治与经济》、2《法律与生活》、3《逻辑与思维》。编号 `cnz_h001`–`cnz_h153`，153 点，612 题，先修边 252 条（hard 168，soft 84，连到初中道德与法治 10 条）。课标 67 条 `czs-hs-2017:`，对象 `politics_senior`，2026-11-22 对照人教社转载课标 PDF 核对印刷页码，verbatim 仍为 false，无待核。目录说明见 `docs/politics-hs-catalog-20261122.md`。
+- 册次为 grade 10–16。首页学科胶囊和全站学科计数、诊断、知识图谱、错题本、期末补漏、知识点静态页都认这一学科。题库拆分新增 `data/questions/politics.json`。Service Worker 缓存版本 v36 → v37：思想政治题库按需加载，不预缓存。
+- 可复跑：`python3 scripts/pol_hs_build.py`，再 `python3 scripts/split_questions.py`。新增 `tests/test_pol_hs.js`，加入 CI 与 `npm test`。
+
 ## 2026-11-22（登录体验：显眼入口、提示条、价值时刻小卡、会话滚动续期）
 
 - 页头账号入口（首页、诊断、档案、错题本、期末补漏）改成实心主色胶囊，字号比导航大一档，旁带小字「登录后换手机不丢」；已登录时胶囊显示邮箱，旁边是同步状态（已同步 · N 分钟前 / 同步中 / 同步未成功）。
