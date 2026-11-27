@@ -1,14 +1,21 @@
 # 中小学·高中知识图谱（数学 + 语文 + 科学 + 英语 + 物理 + 历史 + 地理 + 生物 + 化学 + 道德与法治 + 思想政治）
 
+11 个学科的知识图谱：4,231 个知识点、6,700 条先修关系、17,071 道题，按国家课程标准逐条核对，附自适应前置诊断与题库。[在线试用 math.pansgo.com](https://math.pansgo.com/)。
+
+<details>
+<summary>对齐依据与覆盖范围（点开看全文）</summary>
+
 对齐《义务教育数学课程标准（2022 年版 2025 年修订）》（教育部《中小学课程方案和课程标准日常修订版》，教材〔2025〕1 号）、《普通高中数学课程标准（2017年版2025年修订）》的**必修和选择性必修**，以及《义务教育英语课程标准（2022年版）》一级、二级和三级（7–9 年级）和《普通高中英语课程标准（2017年版2025年修订）》的必修、选择性必修。数学教材是人教版一–九、人教 A 版（2019）必修两册和选择性必修三册；英语按人教 PEP（三年级起点，根据2022年版课程标准修订的新版）三上到六上（四下按 2026 春 pep4x_2026 densify；五下新版未上线暂按现行 peps5x densify；六下按现行 peps6x densify）、人教版 Go for it! 新版七上到九上（九下新版未上线，暂按旧版九年级全一册第 9–14 单元等），以及人教版（2019）高中必修三册和选择性必修四册。初中物理按人教版新版（根据2022年版课程标准修订）八年级上册、八年级下册、九年级全一册，对齐《义务教育物理课程标准（2022年版2025年修订）》；高中物理按人教版（2019年审定）必修第一至三册和选择性必修第一至三册，对齐《普通高中物理课程标准（2017年版2020年修订）》。附**自适应前置诊断**与题库。数学答错会沿先修边从高中、初中一直回溯到具体的小学知识点。英语单独成图，不和数学连边；初中英语会连回小学英语，高中英语主要连回初中英语。物理也单独成图，用到的数学写在知识点的 `mathLinks` 字段里，不算先修边。仓库名仍是 `cn-math-taxonomy`。初中生物按人教版七至八年级单独成图，对齐《义务教育生物学课程标准（2022年版）》第四学段内容要求的公开转述；六三制九年级没有生物课。高中历史（统编版必修两册、选择性必修三册）、高中地理（人教版必修两册、选择性必修三册）、高中生物学（人教版必修两册、选择性必修三册）各自接在同科初中之后，先修边连回初中。初中化学按人教版九年级上、下册单独成图，对齐《义务教育化学课程标准（2022年版）》第四学段内容要求的公开转述；六三制化学在九年级开设，不建七、八年级化学点，也不采用五四制全一册。高中化学必修第一册、必修第二册、选择性必修第一册《化学反应原理》、选择性必修第二册《物质结构与性质》和选择性必修第三册《有机化学基础》按人教版印刷目录成图，对齐《普通高中化学课程标准（2017年版）》相关内容要求的公开转述。初中语文按统编版七至九年级并入已有语文学科（仍是 `subject=chinese`，编号 `cnc_j`），对齐《义务教育语文课程标准（2022年版）》第四学段学段要求的公开转述（2026-11-06 对照人教社电子书印刷页 14–16；该节没有【内容要求】标题，也未取得教育部 PDF）；小学语文仍是 `cnc_p`。高中语文按统编版必修上、下与选择性必修上、中、下并入语文学科，编号 `cnc_h001`–`cnc_h144`，2026-11-20 上线。高中思想政治按统编版必修 1–4 与选择性必修 1–3 单独成图，仅高中，编号 `cnz_h`，先修主要在学科内，少量连回初中道德与法治。
 
 **范围：数学高中做到必修和选择性必修，并且只用人民教育出版社 A 版（2019）；英语做到三年级到高中（人教版 2019 必修三册、选择性必修四册）；语文做到小学一至六年级、初中七至九年级和高中必修上、下与选择性必修上、中、下（统编版）。** 7.3「复数的三角表示」仍按教材选学处理，没有单独建点。定积分不在选择性必修的内容要求里，没有建点。英语不出听力和口语题。
 
+</details>
+
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 [![在线试用](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E8%AF%95%E7%94%A8-math.pansgo.com-2ea44f)](https://math.pansgo.com/)
-[![GitHub Pages 备份](https://img.shields.io/badge/备份-GitHub%20Pages-lightgrey)](https://xiaoyang111222.github.io/cn-math-taxonomy/)
+[![GitHub Pages（README 网页版）](https://img.shields.io/badge/备份-GitHub%20Pages-lightgrey)](https://xiaoyang111222.github.io/cn-math-taxonomy/)
 
-> **商业授权：** 本项目采用 CC BY-NC 4.0，个人学习、教学、研究可免费使用；**商业使用（付费课程、付费 App、机构收费服务等）需单独授权**，请通过 X 私信 [@hassanyehiaa](https://x.com/hassanyehiaa)、邮箱 [499749204@qq.com](mailto:499749204@qq.com) 或在本仓库 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues) 联系，条款见文末「许可证 / License」。
+> **商业授权：** 本项目采用 CC BY-NC 4.0，个人学习、教学、研究可免费使用；**商业使用（付费课程、付费 App、机构收费服务等）需单独授权**，请通过 X 私信 [@hassanyehiaa](https://x.com/hassanyehiaa)、邮箱 [499749204@qq.com](mailto:499749204@qq.com) 联系；也可在本仓库 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues) 说明用途（报价与合同细节请走私信或邮件），条款见文末「许可证 / License」。
 
 ## 仓库拆分说明（2026-11-25）
 
@@ -16,7 +23,7 @@
 
 本仓从此只含**数据与数据工具链**：`data/` 下的知识点、先修边、题库、映射，`scripts/` 下生成与校验这些数据的脚本，`tests/` 下的纯数据测试，以及 `docs/` 里的数据文档。网站侧测试随源码一起迁走，网站仓构建和测试前会从本仓同步 `data/`。拆分前的完整状态保留在 tag `pre-split-2026-11-25`。本仓的目录布局与数据规模见下文「仓库结构」；下文各学科章节、「诊断小工具」和「线上站点功能说明」里提到的页面、URL 参数与交互，描述的是线上站点的功能，其源码已不在本仓。
 
-**[→ 在线试用诊断（演示：配方法）](https://math.pansgo.com/diagnose/?target=cnm_221&demo=1)** · [首页](https://math.pansgo.com/) · [知识图谱](https://math.pansgo.com/explore/) · [诊断工具](https://math.pansgo.com/diagnose/) · [GitHub Pages 备份](https://xiaoyang111222.github.io/cn-math-taxonomy/)
+**[→ 在线试用诊断（演示：配方法）](https://math.pansgo.com/diagnose/?target=cnm_221&demo=1)** · [首页](https://math.pansgo.com/) · [知识图谱](https://math.pansgo.com/explore/) · [诊断工具](https://math.pansgo.com/diagnose/) · [GitHub Pages（README 网页版）](https://xiaoyang111222.github.io/cn-math-taxonomy/)
 
 ![首页：三步说明、实时统计和年级入口](screenshots/06-home.png)
 
@@ -34,11 +41,11 @@
 
 | | 知识点 | 先修边 | 课标条目 | 题库 |
 | --- | ---: | ---: | ---: | ---: |
-| 小学（1–6 年级） | 284 | 459（小学内部） | 77（第一至三学段；2026-10-21 按 2025 修订版补齐 4 条） | 1136 |
+| 小学（1–6 年级） | 294 | 478（小学内部） | 77（第一至三学段；2026-10-21 按 2025 修订版补齐 4 条） | 1176 |
 | 初中（7–9 年级） | 315 | 563（初中内部，未改） | 157（第四学段） | 1407 |
 | 高中必修 | 143 | 144（高中内部） | 48（2017 必修，2026-11-06 记 2020 年修订版 PDF 印刷页，转述） | 572 |
 | 高中选择性必修 | 128 | 148（选择性必修内部） | 32（2017 选择性必修，2026-11-06 记 2020 年修订版 PDF 印刷页，转述） | 512 |
-| 数学合计 | 870 | 1459（另有初中→小学 45、必修跨学段 54、选择性必修跨模块 46） | 314 | 3627 |
+| 数学合计 | 880 | 1478（另有初中→小学 45、必修跨学段 54、选择性必修跨模块 46） | 314 | 3667 |
 | 小学英语（3–6 年级） | 275 | 368（hard 117，soft 251；不与数学相连） | 35（2022 一级、二级：语音词汇语法记印刷页 19–21，日常表达和读写已于 2026-11-22 对照课标表13、表15–19，部分条目课标无对应仍待核） | 1100 |
 | 初中英语（7–9 年级） | 257 | 361（hard 117，soft 244；其中 29 条硬边指向小学英语） | 37（2022 三级：语音词汇语法记印刷页 19–21，日常表达和读写已于 2026-11-22 对照课标表13、表15–19，部分条目课标无对应仍待核） | 1028 |
 | 高中英语（必修三册、选择性必修四册） | 259 | 299（hard 44，soft 255；其中 22 条指向初中英语） | 44（2017：语音词汇语法记 2020 年修订版 PDF 表4–6，日常表达和读写已于 2026-11-22 对照课标表8、表10，部分条目课标无对应仍待核） | 1036 |
@@ -48,11 +55,11 @@
 | 初中语文（7–9 年级） | 189 | 243（hard 59，soft 184；其中 19 条硬边指向小学语文） | 12（2022 语文第四学段，转述；人教社电子书印刷页 14–16，未对教育部 PDF） | 756 |
 | 高中语文（必修上、下，选必上、中、下） | 144 | 249（hard 135，soft 114；其中 63 条指向初中语文，3 条指向小学语文） | 20（2017 高中，本图谱自编号 ccs-hs-2017，2026-11-22 已逐条对照课标 PDF，19 条记课标印刷页码、1 条课标无对应仍待核） | 576 |
 
-上表是数学、英语、物理、语文四科的分学段明细；另有道德与法治 269 个知识点、科学 262 个、历史 254 个、生物 201 个、地理 178 个、化学 147 个、思想政治 153 个，明细见下文各学科章节。全站合计：4,221 个知识点、6,681 条先修边、17,031 道题、1,039 条课程标准条目（实测口径见「仓库结构」）。
+上表是数学、英语、物理、语文四科的分学段明细；另有道德与法治 269 个知识点、科学 262 个、历史 254 个、生物 201 个、地理 178 个、化学 147 个、思想政治 153 个，明细见下文各学科章节。全站合计：4,231 个知识点、6,700 条先修边、17,071 道题、1,039 条课程标准条目（实测口径见「仓库结构」）。
 
 数据格式参考 [Marble os-taxonomy](https://github.com/withmarbleapp/os-taxonomy)（`topics` + `dependencies`）。
 
-**反馈 / 挑错：** 题干、答案或先修关系有问题，或想提功能建议，请 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues/new/choose)（已提供「题目纠错」「功能建议」模板）。
+**反馈 / 挑错：** 题干、答案或先修关系有问题，或想提功能建议，请 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues/new/choose)（已提供「题目纠错」「功能建议」模板）；想直接改数据，见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 > 知识点的拆分粒度、掌握标准、诊断题答案，尤其是**先修关系（哪些是 hard、哪些是 soft，甚至某条边该不该存在）都需要一线教师审核**后才能用于教学、诊断或学习路径推荐。小学和初中数学的诊断题有自动核验，初中数学另有盲解复核，小学数学有独立程序复核；**高中题和英语题没有做盲解**，`verify` 和答案来自同一条表达式。小学册次目录和高中章节目录多数不是官方逐页核对。高中数学课标已于 2026-11-06 记下人教社转载 PDF 的印刷页，句子仍是转述。英语语音、词汇、语法已于 2026-11-06 记了人教社电子书或转载 PDF 的印刷页，句子仍是转述。日常表达、读写，以及 PEP、Go for it!、高中 2019 的册次，标了「待核」的不要当成官方原文或页码。初中语文各册目录仍未逐页核对纸质课本。第一至第三学段学段要求已于 2026-11-06 对照人教社电子书印刷页 7–13，第四学段对照印刷页 14–16，库存句子仍是转述，未取得教育部 PDF。小学语文册次的逐课目录这次只抽查到一上修订要点，没有升成官方逐课目录。
 >
@@ -122,7 +129,7 @@
 
 网站源码已迁至私有仓维护，本仓只发布数据与数据工具链；拆分前的完整状态保留在 tag `pre-split-2026-11-25`。线上站点 [math.pansgo.com](https://math.pansgo.com/) 构建前会同步本仓 `data/`，功能不受影响（背景见上文「仓库拆分说明」）。
 
-本仓现有 429 个受版本控制的文件（`git ls-files` 实测）：
+本仓现有 431 个受版本控制的文件（`git ls-files` 实测）：
 
 | 位置 | 文件数 | 用途 |
 | --- | ---: | --- |
@@ -131,16 +138,16 @@
 | `tests/` | 6 | 数据侧校验测试（4 个 Python、2 个 Node） |
 | `docs/` | 36 | 文档：课标对齐说明、目录核对记录、题库说明、教材版本映射方案等 |
 | `screenshots/` | 14 | 本 README 引用的站点截图 |
-| `.github/` | 4 | Issue 模板（题目纠错、功能建议）与 CI 配置 |
-| 根目录 | 5 | `README.md`、`LICENSE`（CC BY-NC 4.0）、`CHANGELOG.md`、`package.json`、`.gitignore` |
+| `.github/` | 5 | Issue 模板（题目纠错、功能建议）、PR 模板与 CI 配置 |
+| 根目录 | 6 | `README.md`、`CONTRIBUTING.md`（贡献指南）、`LICENSE`（CC BY-NC 4.0）、`CHANGELOG.md`、`package.json`、`.gitignore` |
 
 ### 数据规模
 
-全站 **4,221** 个知识点、**6,681** 条先修边（hard 3,564，soft 3,117）、**17,031** 道题、**11** 个学科，课程标准条目 **1,039** 条。分学科如下：
+全站 **4,231** 个知识点、**6,700** 条先修边（hard 3,580，soft 3,120）、**17,071** 道题、**11** 个学科，课程标准条目 **1,039** 条。分学科如下：
 
 | 学科 | 知识点 | 题 |
 | --- | ---: | ---: |
-| 数学 | 870 | 3,627 |
+| 数学 | 880 | 3,667 |
 | 语文 | 827 | 3,308 |
 | 英语 | 791 | 3,164 |
 | 物理 | 269 | 1,076 |
@@ -151,7 +158,7 @@
 | 地理 | 178 | 712 |
 | 思想政治 | 153 | 612 |
 | 化学 | 147 | 588 |
-| 合计 | 4,221 | 17,031 |
+| 合计 | 4,231 | 17,071 |
 
 数字取自 `data/topics.json`、`data/dependencies.json`、`data/questions/index.json` 的条数和 `python3 scripts/validate.py` 的输出，数据更新后会变，以文件为准。
 
@@ -164,7 +171,7 @@
 - `id-aliases.json`：旧 id 别名，共 25 条：旧的 `cnm_ext_001`…`018`（18 条，映射到小学正式知识点，方案 b，节点已删除）和科学里已合并或删除的 7 个编号。
 - `english/days.json`：英语每日一句句子表，共 30 天，每天一句，含译文、逐词释义、提示和变体句。
 - `mappings/`：教材版本映射，共 6 个文件。
-  - `hujiao-math.json`：沪教版小学数学映射，185 条，状态 draft；站点运行时读取它，方案与格式见 [docs/hujiao-mapping-plan.md](docs/hujiao-mapping-plan.md)。
+  - `hujiao-math.json`：沪教版小学数学映射，195 条，状态 draft；站点运行时读取它，方案与格式见 [docs/hujiao-mapping-plan.md](docs/hujiao-mapping-plan.md)。
   - `hujiao_math.json`（160 条）、`sujiao_math.json`（277 条）、`sd54_math.json`（12 条）、`yilin_english.json`（230 条）：其他版本和早期的沪教版对照草稿，状态均为 draft，站点不读取，贡献约定见 [docs/edition-mappings.md](docs/edition-mappings.md)。
   - `hujiao_math.example.json`：格式示例（6 条占位值，不是真实对照）。
 - 题库核验与生成留档：`verification_report.json`（答案自动核验加独立第二遍复核的报告）、`second_pass_log.json`（第二遍复核的裁决与修正记录）、`_second_pass/`（73 个文件，解题者的原始答案和推导）、`_qbatches/`（8 个文件，题库生成批次，便于对照）、`_distractor_changelog.json`（干扰项改写记录）。
@@ -175,7 +182,7 @@
 - `tests/`：数据侧校验测试，包括题目 id 与纠错模板、`verify` 表达式精确求值、初中道法入库安全（缺模块不删已有点，排序不改 id）、初中语文重建时保留高中指向初中的边、初中英语待核标记、CI 工作流。`npm test` 会依次运行这些测试，再跑 `validate.py`、`check_figures.py` 和 `verify_questions.py`。
 - `docs/`：文档，包括课标对齐说明 [docs/standards-mapping.md](docs/standards-mapping.md)、2025 年修订对齐记录 [docs/moe2025-alignment.md](docs/moe2025-alignment.md)、各学科目录核对记录、题库说明 [docs/questions.md](docs/questions.md) 和教材版本映射方案。
 - `screenshots/`：README 引用的站点截图。
-- 变更记录见根目录 [CHANGELOG.md](CHANGELOG.md)（按日期记录，含 id 变动说明）。
+- 变更记录见根目录 [CHANGELOG.md](CHANGELOG.md)（按日期记录，含 id 变动说明）。贡献方式见 [CONTRIBUTING.md](CONTRIBUTING.md)，PR 模板在 `.github/PULL_REQUEST_TEMPLATE.md`。
 
 ### topics.json 字段
 
@@ -185,15 +192,19 @@
 |---|---|
 | `id` | 稳定 id。初中 `cnm_001` …；小学 `cnm_p001` 起；高中 `cnm_h001` 起（必修到 `cnm_h143`，选择性必修从 `cnm_h144` 起。数学三套 id 不混用）。英语小学 `cne_p001` 起，初中 `cne_j001` 起，高中 `cne_h001` 起 |
 | `name` | 中文名称 |
-| `domain` | 数与代数 / 图形与几何 / 统计与概率 / 综合与实践 |
-| `grade` | 1–9 的整数 |
-| `semester` | "上" 或 "下" |
+| `subject` | 学科代码：`chinese` `english` `physics` `chemistry` `biology` `history` `geography` `morality` `science` `politics`。**数学知识点没有这个字段**（缺省即数学） |
+| `domain` | 因学科而异，是各学科自己的领域划分。数学为 数与代数 / 图形与几何 / 统计与概率 / 综合与实践；其他学科各用本学科的分类（如物理的 物质 / 能量 / 运动和相互作用，历史的 中国古代史 / 世界近代史 等），以 `data/topics.json` 里实际取值为准 |
+| `grade` | 1–16 的整数。1–9 为小学一年级到初中九年级；10 起为高中，按册次顺排（各册对应的数值见各学科章节） |
+| `semester` | "上"、"下"，或 "全"（全一册等整册合编的教材） |
 | `chapter` | 人教版章节。初中如 `七上 第一章 有理数 1.2.1`；小学如 `一年级上册 第1单元 5以内数的认识和加、减法`；高中必修如 `高一 第一章 集合与常用逻辑用语 1.1`（必修第一册）、`高二 第六章 平面向量及其应用 6.1`（必修第二册）。选择性必修如 `选必一 第一章 空间向量与立体几何 1.1`、`选必二 第五章 一元函数的导数及其应用 5.1`、`选必三 第六章 计数原理 6.1`。建模与探究不带「第×章」：`高一 数学建模 建立函数模型`、`选必三 数学探究 杨辉三角的性质与应用`、`选必三 数学建模 建立统计模型进行预测`。高中 `grade` 为 10–14，`semester` 都写「上」（不拆上下册）。12、13、14 只表示选择性必修三册，不是高三、高四 |
 | `type` | conceptual / procedural / reasoning / application / modeling |
 | `description` | 通俗说明（1—2 句） |
 | `mastery_criteria` | 2—3 条掌握标准（字符串数组） |
 | `diagnostic_question` | `{"question": "...", "answer": "..."}` |
 | `external` | `false` |
+| `lesson`、`frames` | **仅部分学科（目前只有道德与法治）**。统编教材的课题名与框题名 |
+| `catalog_status` | **仅部分学科（目前是道德与法治、英语）**。目录核对状态，如 `official_toc`（已对官方目录）、`body_checked_no_lesson`（已核正文、未对到具体课） |
+| `mathLinks` | **仅部分学科（目前是物理、科学）**。`[{id: cnm_…, reason}]`，指向用到的数学知识点；不进先修图 |
 | `standards` | 课标映射数组，元素 `{"id", "confidence", "note"?}`，见下节；可为空数组 |
 | `root_reason` | 仅当没有任何先修边时必填。现在只有 `cnm_p001`（1到5各数的认识） |
 | `mappings` | 可选。其他教材版本的对照，`{版本 id: {grade, term, unit?, chapter?, note?}}`，如 `hujiao_math`（沪教版）；缺省就是只有人教版。目前没有知识点带这个字段；教材版本映射现存放在 `data/mappings/` 下的独立文件（见上文「仓库结构」），贡献方式见 [docs/edition-mappings.md](docs/edition-mappings.md) |
@@ -711,6 +722,6 @@ python3 scripts/validate.py
 - ✅ 可以免费用于个人学习、教学、研究，可以修改和再分发，但需署名并注明来源（本仓库链接）。
 - ❌ 不得用于商业用途（包括但不限于付费课程、付费 App、机构收费服务、售卖题库等）。
 
-**商用授权：** 如需商业使用，请联系作者获取单独授权：X（Twitter）私信 [@hassanyehiaa](https://x.com/hassanyehiaa)、邮箱 [499749204@qq.com](mailto:499749204@qq.com)，或在本仓库 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues) 说明用途。
+**商用授权：** 如需商业使用，请联系作者获取单独授权：X（Twitter）私信 [@hassanyehiaa](https://x.com/hassanyehiaa)、邮箱 [499749204@qq.com](mailto:499749204@qq.com)；也可在本仓库 [提交 Issue](https://github.com/xiaoyang111222/cn-math-taxonomy/issues) 说明用途（报价与合同细节请走私信或邮件）。
 
-This project is licensed under CC BY-NC 4.0. For commercial licensing, please contact the author via X [@hassanyehiaa](https://x.com/hassanyehiaa), email [499749204@qq.com](mailto:499749204@qq.com), or open an issue.
+This project is licensed under CC BY-NC 4.0. For commercial licensing, please contact the author via X [@hassanyehiaa](https://x.com/hassanyehiaa), or email [499749204@qq.com](mailto:499749204@qq.com). You may also open an issue to describe your use case, but please keep pricing and contract details to DM or email.
